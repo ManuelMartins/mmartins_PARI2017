@@ -1,4 +1,0 @@
-/home/ubuntu/Documentos/Aula12/mmartins_PARI2017/build/CMakeFiles/rebuild_cache.dir
-/home/ubuntu/Documentos/Aula12/mmartins_PARI2017/build/CMakeFiles/cpfiles.dir
-/home/ubuntu/Documentos/Aula12/mmartins_PARI2017/build/CMakeFiles/edit_cache.dir
-/home/ubuntu/Documentos/Aula12/mmartins_PARI2017/build/CMakeFiles/myf.dir
