@@ -55,3 +55,6 @@ dkms.conf
 # Gedit temp files
 *~
 
+#ignore build patterns
+build/*
+
