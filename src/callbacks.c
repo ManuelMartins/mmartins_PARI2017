@@ -9,3 +9,7 @@ gboolean pari_UpdateImageAreas(gpointer data)
         gtk_widget_queue_draw(da1);
         return TRUE;
 }
+
+
+
+

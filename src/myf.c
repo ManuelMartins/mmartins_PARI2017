@@ -69,3 +69,45 @@ void pari_RefreshDrawingArea( char * widgetName, IplImage *img)
         cairo_destroy(cr);
         g_object_unref(pix);  //free the pixbuf...
 }
+
+
+
+
+
+
+/**
+ * @brief  Function to perform some specific operation.
+ *
+ * @param  src Source image to process
+ * @param  dst Image to put the processed result
+ * @param  gb  GtkBuilder pointer for the currently loaded GUI.
+ * @param  udata1 gpointer for generic data for the operation. Normally the widget name. Return if NULL.
+ * @param  udata2 gpointer for generic data for the operation. Normally the widget name for auxiliary parameter. May be ignored.
+ */
+ 
+ void pari_ProcessUserOperations(IplImage *src, IplImage *dst)
+{
+        /*If nothing is to be done at least the dst is the same as src*/
+      //  cvCopy( src, dst, NULL);
+
+    /*    //Now operate all functions accumulated (one after one)
+        pari_UserOperation1(dst, dst, builderG, (gpointer)"checkbutton1", ...);
+        pari_UserOperation2(dst, dst, builderG, (gpointer)"checkbutton2", ...);
+        pari_UserOperation3(dst, dst, builderG, (gpointer)"checkbutton3", ...);
+        pari_UserOperation4(dst, dst, builderG, (gpointer)"checkbutton4", ...);
+        pari_UserOperation5(dst, dst, builderG, (gpointer)"checkbutton5", ...);
+        pari_UserOperation6(dst, dst, builderG, (gpointer)"checkbutton6", ...); */
+}
+
+
+
+gboolean on_drawingarea1_expose_event(GtkWidget * widget, GdkEvent * event, gpointer user_data)
+{
+        pari_PerformImageAcquisition(captureG);             //acquire new image
+        pari_ProcessUserOperations(src_imageG, dst_imageG); // Perform here the openCV transformations
+
+        //update the drawing area displays
+        pari_RefreshDrawingArea("drawingarea1", src_imageG);
+        pari_RefreshDrawingArea("drawingarea2", dst_imageG);
+        return TRUE;
+}
